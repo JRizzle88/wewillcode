@@ -1,0 +1,27 @@
+.side-nav.fixed { padding-top: 64px; }
+
+header, main, footer {
+  padding-left: 240px;
+}
+.side-nav .fa {
+  line-height: 40px; 
+}
+.side-nav a, 
+.side-nav.fixed a { 
+  color: white;
+  height: 40px;
+  line-height: 40px;
+}
+.side-nav li:hover, 
+.side-nav li.active {
+  background-color: #2196f3; 
+}
+.side-nav li .dropdown-content li:hover {
+  background-color: #1976D2;
+}
+
+@media only screen and (max-width : 992px) {
+header, main, footer {
+  padding-left: 0;
+}
+}

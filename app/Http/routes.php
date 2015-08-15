@@ -15,6 +15,7 @@ Route::get('/home', 'WelcomeController@index');
 
 // Account
 Route::get('/account', 'AccountController@index');
+Route::get('/account/dashboard', 'AccountController@dashboard');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

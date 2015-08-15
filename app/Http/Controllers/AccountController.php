@@ -27,4 +27,9 @@ class AccountController extends Controller {
 		return view('account.index');
 	}
 	
+	public function dashboard()
+	{
+		return view('account.dashboard');
+	}
+	
 }
