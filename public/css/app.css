@@ -3,7 +3,13 @@
 .login-form { margin-top: 4em; }
 
 header .dropdown-content li a { color: #1976D2; padding: .7rem; }
+.dropdown-content li a, 
+.dropdown-content li span {
+	font-size: .9rem;
+}
 
+.collection-item:hover { background: #eeeeee; cursor: pointer; }
+.collection-item .secondary-content { margin-left: 8px; }
 .account .account-info { padding: 1em; }
 i.session { padding: .3em; }
 

@@ -5,7 +5,7 @@
 				<a href="{{ url('/') }}" class="brand-logo">Studios</a>
 				<ul class="right hide-on-med-and-down">
 					@if(Auth::check())
-						<li><a href="{{ url('/') }}" class="dropdown-button" data-beloworigin="true" data-activates="account-dropdown"><i class="fa fa-gear left"></i>Account</a></li>
+						<li><a href="{{ url('/') }}" class="dropdown-button" data-beloworigin="true" data-activates="account-dropdown"><i class="fa fa-gear"></i></a></li>
 					@else
 						<li><a href="{{ url('/auth/register') }}"><i class="fa fa-plus left"></i>Register</a></li>
 						<li><a href="{{ url('/auth/login') }}"><i class="fa fa-sign-in left"></i>Login</a></li>

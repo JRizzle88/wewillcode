@@ -1,6 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\User;
+use App\Page;
+use App\Post;
+
 use Response;
 
 class AccountController extends Controller {
@@ -29,7 +32,33 @@ class AccountController extends Controller {
 	
 	public function dashboard()
 	{
-		return view('account.dashboard');
+		$activeCount = User::where('active', '1')->count();
+		$subscriberCount = User::where('role', 'subscriber')->count();
+		$freelancerCount = User::where('role', 'freelancer')->count();
+		$inactiveCount = User::where('active', '0')->count();
+		
+		$latestUsers = User::take(4)->latest()->get();
+		$latestSubscribers = User::take(4)->where('role', 'subscriber')->latest()->get();
+		$latestPosts = Post::take(4)->latest()->get();
+		$latestPages = Page::take(4)->latest()->get();
+		
+		return view('account.dashboard')
+			->with('activeCount', $activeCount)
+			->with('subscriberCount', $subscriberCount)
+			->with('freelancerCount', $freelancerCount)
+			->with('inactiveCount', $inactiveCount)
+			->with('latestUsers', $latestUsers)
+			->with('latestSubscribers', $latestSubscribers)
+			->with('latestPosts', $latestPosts)
+			->with('latestPages', $latestPages);
+	}
+	
+	public function users()
+	{
+		$superAdmins = User::take(30)->where('role', 'super_admin')->latest()->get();
+		
+		return view('account.users.index')
+			->with('superAdmins', $superAdmins);
 	}
 	
 }

@@ -92,4 +92,44 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasOne('App\UserInformation');
 	}
+	
+	/**
+	 * Has many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function pages()
+	{
+		return $this->hasMany('App\Page');
+	}
+	
+	/**
+	 * Has many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function posts()
+	{
+		return $this->hasMany('App\Post');
+	}
+	
+	/**
+	 * Has many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function comments()
+	{
+		return $this->hasMany('App\Comment');
+	}
+	
+	/**
+	 * Has many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function fileentries()
+	{
+		return $this->hasMany('App\Fileentry');
+	}
 }
