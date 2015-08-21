@@ -33,7 +33,20 @@ Mission statement.
 
 ## Documentation
 
-Documenation links and or / paragraphs.
+#### Models
+app/
+
+#### Views
+resources/views
+
+#### Controllers
+app/http/controllers
+
+#### Middleware
+app/http/middleware
+
+#### Custom Namespaces
+superadmin
 
 ## Contributors
 
