@@ -33,22 +33,23 @@ Mission statement.
 
 ## Documentation
 
-#### Models
+##### Models
 app/
 
-#### Views
+##### Views
 resources/views
 
-#### Controllers
+##### Controllers
 app/http/controllers
 
-#### Middleware
+##### Middleware
 app/http/middleware
 
-#### Custom Namespaces
+##### Custom Namespaces
 superadmin
 
 ## Contributors
 
-Joshua Riley 
-Michael Gamble
+Joshua Riley, 
+Michael Gamble,
+Stephen Hughes
