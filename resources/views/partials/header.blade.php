@@ -13,7 +13,11 @@
 				</ul>
 				<ul id="slide-out-main" class="side-nav">
 					<li><a href="{{ url('account') }}">Profile</a></li>
-					<li><a href="{{ url('account/dashboard') }}">Dashboard</a></li>
+					@if(Auth::check())
+						@if(Auth::user()->isSuperAdmin())
+							<li><a href="{{ url('superadmin') }}">Dashboard</a></li>
+						@endif
+					@endif
 					<li><a href="#!">Projects</a></li>
 					<li><a href="#!">Settings</a></li>
 					<li><a href="{{ url('auth/logout') }}">Logout</a></li>
@@ -25,7 +29,11 @@
 	<!-- Account Dropdown -->
 	<ul id="account-dropdown" class="dropdown-content">
 		<li><a href="{{ url('account') }}">Profile</a></li>
-		<li><a href="{{ url('account/dashboard') }}">Dashboard</a></li>
+		@if(Auth::check())
+			@if(Auth::user()->isSuperAdmin())
+				<li><a href="{{ url('superadmin') }}">Dashboard</a></li>
+			@endif
+		@endif
 		<li><a href="#!">Projects</a></li>
 		<li><a href="#!">Settings</a></li>
 		<li><a href="{{ url('auth/logout') }}" class="red white-text lighten-1">Logout</a></li>

@@ -3,6 +3,7 @@
 jQuery(document).ready(function($) {
 	
 	$('.button-collapse.admin').sideNav({
+		//edge: 'right',
 		closeOnClick: false
 	});
 	
@@ -12,4 +13,8 @@ jQuery(document).ready(function($) {
 	});
 	
 	$('ul.tabs').tabs();
+	
+	$('select').material_select();
+	
+	$('.flash-messages').delay(4000).fadeOut(500);
 });

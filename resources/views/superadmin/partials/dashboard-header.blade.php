@@ -10,7 +10,9 @@
         <!-- Account Dropdown -->
         <ul id="account-dropdown" class="dropdown-content">
           <li><a href="{{ url('account') }}">Profile</a></li>
-          <li><a href="{{ url('account/dashboard') }}">Dashboard</a></li>
+          @if(Auth::user()->isSuperAdmin())
+						<li><a href="{{ url('superadmin') }}">Dashboard</a></li>
+					@endif
           <li><a href="#!">Projects</a></li>
           <li><a href="#!">Settings</a></li>
           <li><a href="{{ url('auth/logout') }}" class="red white-text lighten-1">Logout</a></li>
@@ -30,19 +32,15 @@
     </ul>   
 	<li><a class="dropdown-button waves-effect waves-light" href="#" data-beloworigin="true" data-activates="posts-dropdown">Posts<i class="fa fa-arrow-down right"></i></a></li>
     <ul id='posts-dropdown' class='dropdown-content blue'>
-      <li><a href="#!">View All</a></li>
-      <li><a href="#!">Create New</a></li>
+      <li><a href="{{ url('superadmin/posts') }}">View All</a></li>
+      <li><a href="{{ url('superadmin/posts/create') }}">Create New</a></li>
     </ul>
 	<li><a class="dropdown-button waves-effect waves-light" href="#" data-beloworigin="true" data-activates="pages-dropdown">Pages<i class="fa fa-arrow-down right"></i></a></li>
     <ul id='pages-dropdown' class='dropdown-content blue'>
-      <li><a href="#!">View All</a></li>
-      <li><a href="#!">Create New</a></li>
+      <li><a href="{{ url('superadmin/pages') }}">View All</a></li>
+      <li><a href="{{ url('superadmin/pages/create') }}">Create New</a></li>
     </ul>
-	<li><a class="dropdown-button waves-effect waves-light" href="#" data-beloworigin="true" data-activates="media-dropdown">Media<i class="fa fa-arrow-down right"></i></a></li>
-    <ul id='media-dropdown' class='dropdown-content blue'>
-      <li><a href="#!">View All</a></li>
-      <li><a href="#!">Upload New</a></li>
-    </ul>
+	<li><a class="waves-effect waves-light" href="{{ url('superadmin/filemanager') }}">Media</a></li>
 	<li><a class="dropdown-button waves-effect waves-light" href="#" data-beloworigin="true" data-activates="settings-dropdown">Settings<i class="fa fa-arrow-down right"></i></a></li>
     <ul id='settings-dropdown' class='dropdown-content blue'>
       <li><a href="#!">Global</a></li>

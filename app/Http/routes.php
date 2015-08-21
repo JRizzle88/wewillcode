@@ -15,7 +15,40 @@ Route::get('/home', 'WelcomeController@index');
 
 // Account
 Route::get('/account', 'AccountController@index');
-Route::get('/account/dashboard', 'AccountController@dashboard');
+
+Route::resource('pages', 'PagesController', ['only' => ['index', 'show']]);
+Route::resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+
+Route::get('filemanager/file/{filename}', ['as' => 'getentry', 'uses' => 'FileManagerController@get']);
+
+// Superadmin
+Route::group(['middleware' => 'superadmin'], function()
+{
+    Route::get('/superadmin', 'Superadmin\DashboardController@dashboard');
+    Route::get('/superadmin/dashboard', 'Superadmin\DashboardController@dashboard');
+    
+    // Pages
+	Route::model('pages', 'Page');
+	Route::bind('pages', function($value, $route) {
+		return App\Page::whereSlug($value)->first();
+	});
+	Route::resource('superadmin/pages', 'SuperAdmin\PagesController');
+	Route::get('superadmin/pages', 'SuperAdmin\PagesController@index');
+	
+	// Posts
+	Route::model('posts', 'Post');
+	Route::bind('posts', function($value, $route) {
+		return App\Post::whereSlug($value)->first();
+	});
+	Route::resource('superadmin/posts', 'SuperAdmin\PostsController');
+	Route::get('superadmin/posts', 'SuperAdmin\PostsController@index');
+	
+	// Filemanager
+	//Route::resource('superadmin/filemanager', 'Superadmin\FileManagerController');
+	//Route::get('superadmin/filemanager/file/{filename}', ['as' => 'getentry', 'uses' => 'FileManagerController@get']);
+	Route::get('superadmin/filemanager', 'Superadmin\FileManagerController@index');
+	Route::post('superadmin/filemanager/add',['as' => 'addentry', 'uses' => 'Superadmin\FileManagerController@add']);
+});
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

@@ -15,7 +15,10 @@ header, main, footer {
 }
 
 /* Dashboard Side Navigation */
-.side-nav.fixed { padding-top: 64px; }
+.side-nav.fixed { 
+  padding-top: 64px; 
+  overflow-x: hidden;
+}
 .side-nav li { padding: 0px; }
 
 .side-nav .fa {
@@ -58,8 +61,11 @@ header, main, footer {
 }
 
 /* Dashboard Cards */
-.dashboard .card .card-title {
+.card .card-title {
   color: #333333; 
+}
+.card .card-content form {
+  display: inline;
 }
 .dashboard .card .card-action {
   padding: 10px 0px 10px 0px;

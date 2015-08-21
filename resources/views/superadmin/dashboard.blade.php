@@ -1,4 +1,4 @@
-@extends('layout.dashboard')
+@extends('layout.superadmin')
 
 @section('content')
 	<div class="dashboard">

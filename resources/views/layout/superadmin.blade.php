@@ -18,13 +18,13 @@
     </head>
     <body>
         <header>
-            @include('account.partials.dashboard-header')
+            @include('superadmin.partials.dashboard-header')
         </header>
         <main>
-            <div class="">
+            <div class="container">
                 <div class="flash-messages">            
                         <!-- Informational Flash Messages -->
-                        @if (Session::has('message'))
+                        @if (Session::has('message'))       
                             <div class="card flash blue lighten-1">
                                 <div class="card-content white-text">
                                     <p>{{ Session::get('message') }}</p>
@@ -42,9 +42,9 @@
                             </div>
                         @endif
                 </div>
-                
-                @yield('content')
-             </div>
+            </div>
+            @yield('content')
+             
         </main>
         </div>
         <!--<footer>
