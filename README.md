@@ -45,7 +45,7 @@ app/http/controllers
 ##### Middleware
 app/http/middleware
 
-##### Custom Namespaces
+##### Custom Namespaces and Roles
 superadmin
 admin
 freelancer
