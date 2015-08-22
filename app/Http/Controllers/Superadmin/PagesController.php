@@ -35,9 +35,9 @@ class PagesController extends Controller {
 	 */
 	public function index(User $user)
 	{
-		$userId = \Auth::user()->id;
+		//$userId = \Auth::user()->id;
 		// get all pages
-		$pages = Page::take(500)->get();
+		$pages = Page::take(500)->orderBy('created_at', 'desc')->get();
 		// index view
 		return view('superadmin.pages.index', compact('user'))->with('pages', $pages);
 
