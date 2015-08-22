@@ -219,7 +219,7 @@
 				@if(Auth::user()->isSuperAdmin())
 					<li><a href="{{ url('superadmin') }}">Admin</a></li>
 				@endif
-				<li><a href="{{ url('auth/logout') }}"><i class="fa fa-sign-out fa-2x"></i></a></li>
+				<li><a href="{{ url('auth/logout') }}">Logout</a></li>
 			@else
 				<li><a href="{{ url('auth/register') }}">Register</a></li>
 				<li><a href="{{ url('auth/login') }}">Login</a></li>

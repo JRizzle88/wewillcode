@@ -1,6 +1,6 @@
 body, html { overflow-x: hidden; }
 
-main { margin-top: 95px; }
+main { margin-top: 80px; padding-top: 20px; }
 body#app { background: #e2e3df; }
 /* -------------------------------- 
 
@@ -20,6 +20,11 @@ body {
   color: #2e3233;
   background-color: #ffffff;
 }
+
+/* Custom Colors */
+.wwc-green-text { color: #69aa6f; }
+.wwc-green-bg { background-color: #69aa6f; }
+
 @media only screen and (max-width: 1169px) {
   body.nav-on-left.overflow-hidden {
     overflow: hidden;
@@ -695,7 +700,7 @@ div#wwc-nav-holder {
     /* secondary nav title */
     color: #69aa6f;
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1rem;
     margin-bottom: .6em;
   }
   .wwc-primary-nav .wwc-secondary-nav a {
@@ -704,7 +709,7 @@ div#wwc-nav-holder {
     padding: 0 18% 0 0;
     color: #2e3233;
     border-bottom: none;
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
   .wwc-primary-nav .wwc-secondary-nav a:hover {
     color: #69aa6f;
