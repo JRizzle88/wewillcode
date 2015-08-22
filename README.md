@@ -34,7 +34,7 @@ Mission statement.
 ## Documentation
 
 ##### Models
-app/
+app/ 
 
 ##### Views
 resources/views
@@ -47,6 +47,10 @@ app/http/middleware
 
 ##### Custom Namespaces
 superadmin
+admin
+freelancer
+subscriber
+user
 
 ## Contributors
 
