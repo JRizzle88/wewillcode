@@ -55,6 +55,7 @@
         <!--<footer>
             @include('partials.footer')
         </footer>-->
+        <footer id="scripts">
         <!-- Scripts -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <!-- <script src="{{ asset('markitup/jquery.markitup.js') }}"></script>
@@ -63,34 +64,40 @@
         <script src="{{ asset('/js/materialize.min.js') }}"></script>
         <script src="{{ asset('/js/customjs.js') }}"></script>
         
+           
         <script language="javascript">
             $(document).ready(function(){
                 // old markItUp editor
                 //$('#page-html-editor').markItUp(myHtmlSettings);
                 //$('#post-html-editor').markItUp(myHtmlSettings);
                 
+                
+                
+                // workaround to increase performance and prevent ace-editor running on pages not needed.
+                // only fires the editor if on posts or page create/edit forms
+                var postEditor = document.getElementsByClassName('superadmin-edit-posts');
+                var pageEditor = document.getElementsByClassName('superadmin-edit-pages');
+                if (postEditor.length || pageEditor.length) {
+                    //console.log('editor exists');
                 // ace editor for posts create / edit
                 var editor = ace.edit("ww-ace-editor");
                     editor.setTheme("ace/theme/textmate");
                     editor.getSession().setMode("ace/mode/html");
+                    editor.$blockScrolling = Infinity;
                     
                 var v = document.getElementById('ww-ace-editor-value').value;
                     editor.setValue(v, 1);
-                //var input = $('input[name="content"]');
-                
+                            
                     editor.getSession().on("change", function() {
                         var contents = editor.getSession().getValue();
                         console.log('editor changed');
                         document.getElementById('ww-ace-editor-value').value = contents;
                         //input.val(contentValue);
-                    });
-                // ace editor for pages create / edit
-                //var pageEditor = ace.edit("page-html-editor");
-                //pageEditor.setTheme("ace/theme/monokai");
-                //pageEditor.getSession().setMode("ace/mode/html");
-                
+                    });  
+                    
+                }   
             });
         </script>
-        
+        </footer>
     </body>
 </html>
