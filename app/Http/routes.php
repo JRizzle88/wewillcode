@@ -50,6 +50,11 @@ Route::group(['middleware' => 'superadmin'], function()
 	Route::get('superadmin/filemanager/index', 'Superadmin\FileManagerController@index');
 	Route::post('superadmin/filemanager/add',['as' => 'addentry', 'uses' => 'Superadmin\FileManagerController@add']);
 	//Route::get('superadmin/filemanager/destroy', 'Superadmin\FileManagerController@destroy');
+	
+	// Settings
+	Route::get('superadmin/settings/global', 'Superadmin\SettingsController@settingsGlobal');
+	Route::get('superadmin/settings/maintenance', 'Superadmin\SettingsController@settingsMaintenance');
+	Route::get('superadmin/settings/server', 'Superadmin\SettingsController@settingsServer');
 });
 
 // Authentication routes...

@@ -24,6 +24,7 @@
 <ul id="slide-out" class="side-nav fixed grey darken-4 z-depth-0">   
 	<li><a class="dropdown-button waves-effect waves-light" href="#" data-beloworigin="true" data-activates="users-dropdown">Users<i class="fa fa-arrow-down right"></i></a></li>
     <ul id='users-dropdown' class='dropdown-content blue'>
+      <li><a href="#!">All</a></li>
       <li><a href="#!">Super Admins</a></li>
       <li><a href="#!">Admins</a></li>
       <li><a href="#!">Freelancers</a></li>
@@ -43,9 +44,9 @@
 	<li><a class="waves-effect waves-light" href="{{ url('superadmin/filemanager') }}">Media</a></li>
 	<li><a class="dropdown-button waves-effect waves-light" href="#" data-beloworigin="true" data-activates="settings-dropdown">Settings<i class="fa fa-arrow-down right"></i></a></li>
     <ul id='settings-dropdown' class='dropdown-content blue'>
-      <li><a href="#!">Global</a></li>
-	    <li><a href="#!">Maintenance</a></li>
-	    <li><a href="#!">Server Resources</a></li>
+      <li><a href="{{ url('superadmin/settings/global') }}">Global</a></li>
+	    <li><a href="{{ url('superadmin/settings/maintenance') }}">Maintenance</a></li>
+	    <li><a href="{{ url('superadmin/settings/server') }}">Server Resources</a></li>
     </ul>
   <li class="left-nav-information">
     @if(\Session::token())
