@@ -33,7 +33,7 @@
         <header>
             @include('partials.header')
         </header>
-        <main>
+        <main class="wwc-main-content">
             <div class="container">
                 <div class="flash-messages">            
                         <!-- Informational Flash Messages -->
