@@ -70,9 +70,20 @@
                 //$('#post-html-editor').markItUp(myHtmlSettings);
                 
                 // ace editor for posts create / edit
-                var postEditor = ace.edit("ww-ace-editor");
-                postEditor.setTheme("ace/theme/textmate");
-                postEditor.getSession().setMode("ace/mode/html");
+                var editor = ace.edit("ww-ace-editor");
+                    editor.setTheme("ace/theme/textmate");
+                    editor.getSession().setMode("ace/mode/html");
+                    
+                var v = document.getElementById('ww-ace-editor-value').value;
+                    editor.setValue(v, 1);
+                //var input = $('input[name="content"]');
+                
+                    editor.getSession().on("change", function() {
+                        var contents = editor.getSession().getValue();
+                        console.log('editor changed');
+                        document.getElementById('ww-ace-editor-value').value = contents;
+                        //input.val(contentValue);
+                    });
                 // ace editor for pages create / edit
                 //var pageEditor = ace.edit("page-html-editor");
                 //pageEditor.setTheme("ace/theme/monokai");

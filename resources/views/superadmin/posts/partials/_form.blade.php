@@ -14,8 +14,9 @@
       <a id="ww-html-mode" class="btn btn-small">HTML</a>
       <a id="ww-preview-mode" class="btn btn-small disabled">PREVIEW</a>
     </div>
+    <div id="ww-ace-editor"></div>
     <!-- {!! Form::label('content', 'Content:') !!} -->
-    {!! Form::textarea('content', null, array('id' => 'ww-ace-editor', 'class' => '', 'size' => 'x25', 'placeholder' => 'Post Content. HTML Tags are valid. Structure how you would like.')) !!}
+    {!! Form::hidden('content', null, array('id' => 'ww-ace-editor-value', 'class' => '', 'placeholder' => 'Post Content. HTML Tags are valid. Structure how you would like.')) !!}
   </div>
 </div>
 

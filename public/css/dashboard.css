@@ -75,7 +75,7 @@ header, main, footer {
 }
 
 /* ace editor */
-pre.ace_editor { min-height: 600px; }
+#ww-ace-editor, pre.ace_editor { min-height: 600px; }
 
 @media only screen and (max-width : 992px) {
 header, main, footer {
