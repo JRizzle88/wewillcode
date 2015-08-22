@@ -36,7 +36,9 @@
                                         @else
                                             <img href="{{route('getentry', $entry->filename)}}" target="_blank" src="{{route('getentry', $entry->filename)}}" class="responsive-img" />
                                             <div class="card-actions">
-                                                <a class="btn btn-xsmall red left"><i class="material-icons">delete</i></a>
+                                                {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('superadmin.filemanager.destroy', $entry->filename))) !!}
+                                                    {!! Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'btn btn-xsmall red')) !!}
+                                                {!! Form::close() !!}
                                                 <a href="{{route('getentry', $entry->filename)}}" target="_blank" class="btn btn-xsmall blue right"><i class="material-icons">visibility</i></a>
                                                 <a class="btn btn-xsmall blue right"><i class="material-icons">link</i></a>
                                             </div>

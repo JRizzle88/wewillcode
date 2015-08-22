@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Fileentry;
 use Request;
+use Redirect;
 use App\User;
 use Auth;
 use Illuminate\Support\Facades\Storage;
@@ -62,5 +63,22 @@ class FileManagerController extends Controller {
 			->header('Content-Type', $entry->mime);
 	}
 	
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  \App\Fileentry $filename
+	 * @return Response
+	 */
+	public function destroy($filename)
+	{
+		//$filename->delete();
+		$entry = Fileentry::where('filename', '=', $filename)->firstOrFail();
+		$entry->delete();
+		Storage::disk('local')->delete($entry->filename);
+		$entries = Fileentry::all();
+		return Redirect('superadmin/filemanager')->with('message', 'File deleted.')->with('entries', $entries);
+		// show after destroy post
+		//return view('posts.show', compact('post'));
+	}
 
 }

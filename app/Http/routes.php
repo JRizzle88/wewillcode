@@ -44,10 +44,12 @@ Route::group(['middleware' => 'superadmin'], function()
 	Route::get('superadmin/posts', 'Superadmin\PostsController@index');
 	
 	// Filemanager
-	//Route::resource('superadmin/filemanager', 'Superadmin\FileManagerController');
-	//Route::get('superadmin/filemanager/file/{filename}', ['as' => 'getentry', 'uses' => 'FileManagerController@get']);
+	Route::resource('superadmin/filemanager', 'Superadmin\FileManagerController', ['only' => ['destroy']]);
+	Route::get('superadmin/filemanager/file/{filename}', ['as' => 'getentry', 'uses' => 'FileManagerController@get']);
 	Route::get('superadmin/filemanager', 'Superadmin\FileManagerController@index');
+	Route::get('superadmin/filemanager/index', 'Superadmin\FileManagerController@index');
 	Route::post('superadmin/filemanager/add',['as' => 'addentry', 'uses' => 'Superadmin\FileManagerController@add']);
+	//Route::get('superadmin/filemanager/destroy', 'Superadmin\FileManagerController@destroy');
 });
 
 // Authentication routes...
