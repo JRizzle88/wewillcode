@@ -1,6 +1,12 @@
 body, html { overflow-x: hidden; }
 
+
 main { margin-top: 80px; padding-top: 20px; }
+
+@media only screen and (max-width: 1170px) {
+main { margin-top: 50px; padding-top: 20px; }
+}
+
 body#app { background: #e2e3df; }
 /* -------------------------------- 
 
