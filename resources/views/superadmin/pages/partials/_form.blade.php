@@ -9,8 +9,12 @@
     {!! Form::text('slug', null, array('class' => 'form-control input-sm', 'placeholder' => 'Page Slug / URL')) !!}
   </div>
   <div class="col s12">
-    {!! Form::label('content', 'Content:') !!}
-    {!! Form::textarea('content', null, array('id' => 'page-html-editor', 'class' => '', 'size' => 'x25', 'placeholder' => 'Page Content. HTML Tags are valid. Structure how you would like.')) !!}
+    <div class="ww-editor-actions">
+      <a id="ww-html-mode" class="btn btn-small">HTML</a>
+      <a id="ww-preview-mode" class="btn btn-small disabled">PREVIEW</a>
+    </div>
+    <!--{!! Form::label('content', 'Content:') !!}-->
+    {!! Form::textarea('content', null, array('id' => 'ww-ace-editor', 'class' => '', 'size' => 'x25', 'placeholder' => 'Page Content. HTML Tags are valid. Structure how you would like.')) !!}
   </div>
 </div>
 
