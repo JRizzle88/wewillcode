@@ -21,10 +21,11 @@
 		</div>
 	</nav> 
 </div>
-<ul id="slide-out" class="side-nav fixed grey darken-4 z-depth-0">   
+<ul id="slide-out" class="side-nav fixed grey darken-4 z-depth-0">
+  <li><a class="waves-effect waves-light" href="{{ url('superadmin/dashboard') }}">Dashboard</a></li> 
 	<li><a class="dropdown-button waves-effect waves-light" href="#" data-beloworigin="true" data-activates="users-dropdown">Users<i class="fa fa-arrow-down right"></i></a></li>
     <ul id='users-dropdown' class='dropdown-content blue'>
-      <li><a href="#!">All</a></li>
+      <li><a href="{{ url('superadmin/users') }}">All</a></li>
       <li><a href="#!">Super Admins</a></li>
       <li><a href="#!">Admins</a></li>
       <li><a href="#!">Freelancers</a></li>

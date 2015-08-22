@@ -17,7 +17,17 @@ Route::get('/home', 'WelcomeController@index');
 Route::get('/account', 'AccountController@index');
 
 Route::resource('pages', 'PagesController', ['only' => ['index', 'show']]);
+Route::model('pages', 'Page');
+Route::bind('pages', function($value, $route) {
+	return App\Page::whereSlug($value)->first();
+});
+
 Route::resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+Route::model('posts', 'Post');
+//Route::model('comments', 'Comment');
+Route::bind('posts', function($value, $route) {
+	return App\Post::whereSlug($value)->first();
+});
 
 Route::get('filemanager/file/{filename}', ['as' => 'getentry', 'uses' => 'FileManagerController@get']);
 
@@ -26,7 +36,10 @@ Route::group(['middleware' => 'superadmin'], function()
 {
     Route::get('/superadmin', 'Superadmin\DashboardController@dashboard');
     Route::get('/superadmin/dashboard', 'Superadmin\DashboardController@dashboard');
-    
+	
+	// Users
+    Route::get('/superadmin/users', 'Superadmin\UsersController@index');
+	
     // Pages
 	Route::model('pages', 'Page');
 	Route::bind('pages', function($value, $route) {

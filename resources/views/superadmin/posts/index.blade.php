@@ -16,7 +16,7 @@
 								<div>
 								
 								@if($p->draft == 1)
-									<a href="{{ route('admin.posts.edit', $p->slug) }}">
+									<a href="{{ route('superadmin.posts.edit', $p->slug) }}">
 										<span class="text-warning"><i class="fa fa-exclamation-triangle"></i> Draft</span> - {{ $p->name }}
 									</a>
 								@else

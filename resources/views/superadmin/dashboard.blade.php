@@ -37,9 +37,8 @@
                   </ul>
                   <div class="card-action">
                     <a href="#" class="btn btn-small waves-effect waves-light white-text green"><i class="fa fa-plus"></i></a>
-                    <a href="#" class="btn btn-small waves-effect waves-light white-text purple"><i class="fa fa-envelope"></i> Invite</a>
-                    
-                    <a href="#" class="btn btn-small waves-effect waves-light white-text blue right"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-small waves-effect waves-light white-text purple"><i class="fa fa-envelope"></i> Invite</a>       
+                    <a href="{{ url('superadmin/users') }}" class="btn btn-small waves-effect waves-light white-text blue right"><i class="fa fa-eye"></i></a>
                   </div> 
               </div>
           </div>
@@ -75,15 +74,15 @@
                       @foreach($latestPosts as $p)
                          <li href="#!" class="collection-item">
                            <div>{{$p->name}}
-                              <a href="#!" class="secondary-content btn btn-xsmall blue tooltipped" data-position="bottom" data-delay="20" data-tooltip="View"><i class="material-icons">visibility</i></a>
-                              <a href="#!" class="secondary-content btn btn-xsmall orange tooltipped" data-position="bottom" data-delay="20" data-tooltip="Edit"><i class="material-icons">more_vert</i></a>
+                              <a href="{{ route('posts.show', $p->slug) }}" class="secondary-content btn btn-xsmall blue tooltipped" data-position="bottom" data-delay="20" data-tooltip="View"><i class="material-icons">visibility</i></a>
+                              <a href="{{ route('superadmin.posts.edit', $p->slug) }}" class="secondary-content btn btn-xsmall orange tooltipped" data-position="bottom" data-delay="20" data-tooltip="Edit"><i class="material-icons">more_vert</i></a>
                            </div>  
                          </li>
                       @endforeach
                   </ul>
                   <div class="card-action">
-                    <a href="#" class="btn btn-small waves-effect waves-light white-text green"><i class="fa fa-plus"></i></a>
-                    <a href="#" class="btn btn-small waves-effect waves-light white-text blue right"><i class="fa fa-eye"></i></a>
+                    <a href="{{ route('superadmin.posts.create') }}" class="btn btn-small waves-effect waves-light white-text green"><i class="fa fa-plus"></i></a>
+                    <a href="{{ route('superadmin.posts.index') }}" class="btn btn-small waves-effect waves-light white-text blue right"><i class="fa fa-eye"></i></a>
                   </div>
               </div>
           </div>
@@ -97,15 +96,15 @@
                       @foreach($latestPages as $p)
                          <li href="#!" class="collection-item">
                            <div>{{$p->name}}
-                              <a href="#!" class="secondary-content btn btn-xsmall blue tooltipped" data-position="bottom" data-delay="20" data-tooltip="View"><i class="material-icons">visibility</i></a>
-                              <a href="#!" class="secondary-content btn btn-xsmall orange tooltipped" data-position="bottom" data-delay="20" data-tooltip="Edit"><i class="material-icons">more_vert</i></a>
+                              <a href="{{ route('pages.show', $p->slug) }}" class="secondary-content btn btn-xsmall blue tooltipped" data-position="bottom" data-delay="20" data-tooltip="View"><i class="material-icons">visibility</i></a>
+                              <a href="{{ route('superadmin.pages.edit', $p->slug) }}" class="secondary-content btn btn-xsmall orange tooltipped" data-position="bottom" data-delay="20" data-tooltip="Edit"><i class="material-icons">more_vert</i></a>
                            </div>  
                          </li>
                       @endforeach
                   </ul>
                   <div class="card-action">
-                    <a href="#" class="btn btn-small waves-effect waves-light white-text green"><i class="fa fa-plus"></i></a>
-                    <a href="#" class="btn btn-small waves-effect waves-light white-text blue right"><i class="fa fa-eye"></i></a>
+                    <a href="{{ route('superadmin.pages.create') }}" class="btn btn-small waves-effect waves-light white-text green"><i class="fa fa-plus"></i></a>
+                    <a href="{{ route('superadmin.pages.index') }}" class="btn btn-small waves-effect waves-light white-text blue right"><i class="fa fa-eye"></i></a>
                   </div>
               </div>
           </div>

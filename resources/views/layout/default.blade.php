@@ -5,7 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>Wewill Code Studios</title>
+        @if(isset($post->seo_title) && !empty($post->seo_title) )
+            <title>{{ isset($post->seo_title) ? $post->seo_title : 'Wewill Code Studios'}}</title>
+            <meta name="keywords" content="{{ isset($post->seo_keywords) ? $post->seo_keywords : ''}}">
+            <meta name="description" content="{{ isset($post->seo_description) ? $post->seo_description : ''}}">
+        @endif
+        
+        @if(isset($page->seo_title) && !empty($page->seo_title) )
+            <title>{{ isset($page->seo_title) ? $page->seo_title : 'Wewill Code Studios'}}</title>
+            <meta name="keywords" content="{{ isset($post->seo_keywords) ? $post->seo_keywords : ''}}">
+            <meta name="description" content="{{ isset($post->seo_description) ? $post->seo_description : ''}}">
+        @endif
         
         <!-- Stylesheets -->
         <link href="{{ asset('/css/materialize.min.css') }}" rel="stylesheet" media="screen,projection">       
