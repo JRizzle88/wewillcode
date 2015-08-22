@@ -10,8 +10,8 @@
   </div>
   <div class="col s12">
     <div class="ww-editor-actions">
-      <a id="ww-html-mode" class="btn btn-small">HTML</a>
-      <a id="ww-preview-mode" class="btn btn-small disabled">PREVIEW</a>
+      <a id="ww-html-mode" class="btn btn-small tooltipped" data-position="top" data-delay="20" data-tooltip="Code"><i class="material-icons">code</i></a>
+      <a id="ww-preview-mode" class="btn btn-small tooltipped" data-position="top" data-delay="20" data-tooltip="Preview"><i class="material-icons">visibility</i></a>
     </div>
     <div id="ww-ace-editor"></div>
     <!--<input type="hidden" id="content" name="content" value="" />-->

@@ -76,8 +76,10 @@
                 // workaround to increase performance and prevent ace-editor running on pages not needed.
                 // only fires the editor if on posts or page create/edit forms
                 var postEditor = document.getElementsByClassName('superadmin-edit-posts');
+                var postNewEditor = document.getElementsByClassName('superadmin-new-posts'); 
                 var pageEditor = document.getElementsByClassName('superadmin-edit-pages');
-                if (postEditor.length || pageEditor.length) {
+                var pageNewEditor = document.getElementsByClassName('superadmin-new-pages'); 
+                if (postEditor.length || pageEditor.length || postNewEditor.length || pageNewEditor.length) {
                     //console.log('editor exists');
                 // ace editor for posts create / edit
                 var editor = ace.edit("ww-ace-editor");
