@@ -1,41 +1,237 @@
-<div class="navbar-fixed">
-	<nav>
-		<div class="nav-wrapper blue darken-2">
-			<div class="container">
-				<a href="{{ url('/') }}" class="brand-logo">Studios</a>
-				<ul class="right hide-on-med-and-down">
-					@if(Auth::check())
-						<li><a href="{{ url('/') }}" class="dropdown-button" data-beloworigin="true" data-activates="account-dropdown"><i class="fa fa-gear"></i></a></li>
-					@else
-						<li><a href="{{ url('/auth/register') }}"><i class="fa fa-plus left"></i>Register</a></li>
-						<li><a href="{{ url('/auth/login') }}"><i class="fa fa-sign-in left"></i>Login</a></li>
-					@endif
+<div id="wwc-nav-holder">
+	<header class="wwc-main-header">
+		<a class="wwc-logo" href="{{ url('/') }}"><img src="{{ asset('img/wwc-logo.svg') }}" alt="Logo"></a>
+
+		<nav class="wwc-nav">
+		<ul id="wwc-primary-nav" class="wwc-primary-nav is-fixed">
+			<li class="has-children">
+				<a href="#0" class="">Nav Link</a>
+
+				<ul class="wwc-secondary-nav is-hidden">
+					<li class="go-back"><a href="#0">Menu</a></li>
+					<li class="see-all"><a href="#0">View Site Map</a></li>
+					<li class="has-children">
+						<a href="#0">Links Set 1</a>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Links Set 1</a></li>
+							<li class="see-all"><a href="#0">All Links</a></li>
+							<li class="has-children">
+								<a href="#0">Sub Menu Parent</a>
+
+								<ul class="is-hidden">
+									<li class="go-back"><a href="#0">All Links</a></li>
+									<li class="see-all"><a href="#0">All Links</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+								</ul>
+							</li>
+							<li class="has-children">
+								<a href="#0">Sub Menu Parent</a>
+
+								<ul class="is-hidden">
+									<li class="go-back"><a href="#0">All Links</a></li>
+									<li class="see-all"><a href="#0">All Links Set 1</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Hats</a></li>
+								</ul>
+							</li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<a href="#0">Links Set 2</a>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Links Set 2</a></li>
+							<li class="see-all"><a href="#0">All Links Set 2</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li class="has-children">
+								<a href="#0">Sub menu Parent</a>
+
+								<ul class="is-hidden">
+									<li class="go-back"><a href="#0">Links</a></li>
+									<li class="see-all"><a href="#0">All Links</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+								</ul>
+							</li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<a href="#0">Links Set 3</a>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Links</a></li>
+							<li class="see-all"><a href="#0">All Links</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<a href="#0">Links Set 4</a>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Links</a></li>
+							<li class="see-all"><a href="#0">All Links</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li><a href="#0">Some Link Here</a></li>
+							<li class="has-children">
+								<a href="#0">Sub Menu Parent</a>
+
+								<ul class="is-hidden">
+									<li class="go-back"><a href="#0">Links</a></li>
+									<li class="see-all"><a href="#0">All Links</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+									<li><a href="#0">Some Link Here</a></li>
+								</ul>
+							</li>
+							<li><a href="#0">Some Link Here</a></li>
+						</ul>
+					</li>
 				</ul>
-				<ul id="slide-out-main" class="side-nav">
-					<li><a href="{{ url('account') }}">Profile</a></li>
-					@if(Auth::check())
-						@if(Auth::user()->isSuperAdmin())
-							<li><a href="{{ url('superadmin') }}">Dashboard</a></li>
-						@endif
-					@endif
-					<li><a href="#!">Projects</a></li>
-					<li><a href="#!">Settings</a></li>
-					<li><a href="{{ url('auth/logout') }}">Logout</a></li>
+			</li>
+
+			<li class="has-children">
+				<a href="#0" class="">Projects</a>
+
+				<ul class="wwc-nav-gallery is-hidden">
+					<li class="go-back"><a href="#0">Menu</a></li>
+					<li class="see-all"><a href="#0">Browse Projects</a></li>
+					<li>
+						<a class="wwc-nav-item" href="#0">
+							<img src="img/img.jpg" alt="Project Image">
+							<h3>Project #1</h3>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item" href="#0">
+							<img src="img/img.jpg" alt="Project Image">
+							<h3>Project #2</h3>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item" href="#0">
+							<img src="img/img.jpg" alt="Project Image">
+							<h3>Project #3</h3>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item" href="#0">
+							<img src="img/img.jpg" alt="Project Image">
+							<h3>Project #4</h3>
+						</a>
+					</li>
 				</ul>
-				<a href="#" data-activates="slide-out-main" class="button-collapse header"><i class="material-icons">reorder</i></a>
-			</div>
-		</div>
-	</nav>
-	<!-- Account Dropdown -->
-	<ul id="account-dropdown" class="dropdown-content">
-		<li><a href="{{ url('account') }}">Profile</a></li>
-		@if(Auth::check())
-			@if(Auth::user()->isSuperAdmin())
-				<li><a href="{{ url('superadmin') }}">Dashboard</a></li>
+			</li>
+
+			<li class="has-children">
+				<a href="#0" class="">Services</a>
+				<ul class="wwc-nav-icons is-hidden">
+					<li class="go-back"><a href="#0">Menu</a></li>
+					<li class="see-all"><a href="#0">Browse Services</a></li>
+					<li>
+						<a class="wwc-nav-item item-1" href="#0">
+							<h3>Service #1</h3>
+							<p>This is the description</p>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item item-2" href="#0">
+							<h3>Service #2</h3>
+							<p>This is the description</p>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item item-3" href="#0">
+							<h3>Service #3</h3>
+							<p>This is the description</p>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item item-4" href="#0">
+							<h3>Service #4</h3>
+							<p>This is the description</p>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item item-5" href="#0">
+							<h3>Service #5</h3>
+							<p>This is the description</p>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item item-6" href="#0">
+							<h3>Service #6</h3>
+							<p>This is the description</p>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item item-7" href="#0">
+							<h3>Service #7</h3>
+							<p>This is the description</p>
+						</a>
+					</li>
+
+					<li>
+						<a class="wwc-nav-item item-8" href="#0">
+							<h3>Service #8</h3>
+							<p>This is the description</p>
+						</a>
+					</li>
+				</ul>
+			</li>
+			@if(Auth::check())
+				<li><a href="{{ url('account') }}">Account</a></li>
+				@if(Auth::user()->isSuperAdmin())
+					<li><a href="{{ url('superadmin') }}">Admin</a></li>
+				@endif
+			@else
+				<li><a href="{{ url('auth/register') }}">Register</a></li>
+				<li><a href="{{ url('auth/login') }}">Login</a></li>
 			@endif
-		@endif
-		<li><a href="#!">Projects</a></li>
-		<li><a href="#!">Settings</a></li>
-		<li><a href="{{ url('auth/logout') }}" class="red white-text lighten-1">Logout</a></li>
-	</ul>
+		</ul> <!-- primary-nav -->
+		
+	</nav>
+	
+	
+	<ul class="wwc-header-buttons">
+		<li><a class="wwc-search-trigger" href="#wwc-search"><span></span></a></li>
+		<li><a class="wwc-nav-trigger" href="#wwc-primary-nav"><span></span></a></li>
+	</ul> <!-- wwc-header-buttons -->
+	</header>
+	
 </div>

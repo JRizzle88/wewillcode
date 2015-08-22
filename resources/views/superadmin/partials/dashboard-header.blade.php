@@ -3,7 +3,7 @@
 		<div class="nav-wrapper blue darken-2">
 			<a href="#" data-activates="slide-out" class="button-collapse admin"><i class="material-icons">reorder</i></a>
 			<div class="container">
-				<a href="{{ url('/') }}" class="brand-logo">Studios</a>
+				<a href="{{ url('/') }}" class="brand-logo"><img src="{{asset('img/wwc-logo.svg')}}" /></a>
         <ul class="right">
           <li><a href="{{ url('/') }}" class="dropdown-button right" data-beloworigin="true" data-activates="account-dropdown"><i class="fa fa-gear"></i> </a></li>
 			  </ul>

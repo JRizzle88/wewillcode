@@ -1,27 +1,30 @@
+body#app main { margin-top: 95px; }
+body#app { background: #e2e3df; }
+/* Custom Colors */
+#app a { color: #69aa6f; }
+.wwc-green-text { color: #69aa6f; }
+.wwc-green-bg { background-color: #69aa6f; }
 
 
-.login-form { margin-top: 4em; }
+/* Navigation */
+#app nav ul a { color: #2e3233; }
+nav ul a:hover { color: #69aa6f; }
+nav ul li { transition: all 0.2s ease; }
+nav ul li:hover, nav ul li.active { background: none; }
 
-header .dropdown-content li a { color: #1976D2; padding: .7rem; }
+header .dropdown-content li a { color: #69aa6f; padding: .7rem; }
 .dropdown-content li a, 
 .dropdown-content li span {
 	font-size: .9rem;
 }
 
+/* Forms */
+.login-form { margin-top: 4em; }
+
 .collection-item:hover { background: #eeeeee; cursor: pointer; }
 .collection-item .secondary-content { margin-left: 8px; }
 .account .account-info { padding: 1em; }
 i.session { padding: .3em; }
-
-.project-table-actions a { padding: .6rem; line-height: 18px; }
-
-
-
-
-
-
-
-
 
 
 

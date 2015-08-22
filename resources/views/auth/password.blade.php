@@ -13,7 +13,7 @@
 		</div>
 		<div class="row">
 			<div class="col s12 center-align">
-				<button type="submit" class="btn waves-effect waves-light blue darken-2">Send Password Reset Link</button>
+				<button type="submit" class="btn waves-effect waves-light wwc-green-bg">Send Password Reset Link</button>
 			</div>
 		</div>
 		</form>

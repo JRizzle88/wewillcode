@@ -8,7 +8,7 @@
         <title>Wewill Code Studios</title>
         
         <!-- Stylesheets -->
-        <link href="{{ asset('/css/materialize.min.css') }}" rel="stylesheet" media="screen,projection">       
+        <link href="{{ asset('/css/materialize.css') }}" rel="stylesheet" media="screen,projection">       
         <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
         <link href="{{ asset('/css/dashboard.css') }}" type="text/css" rel="stylesheet">
         
     </head>
-    <body>
+    <body id="superadmin">
         <header>
             @include('superadmin.partials.dashboard-header')
         </header>

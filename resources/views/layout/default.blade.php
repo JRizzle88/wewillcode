@@ -18,14 +18,14 @@
         @endif
         
         <!-- Stylesheets -->
-        <link href="{{ asset('/css/materialize.min.css') }}" rel="stylesheet" media="screen,projection">       
+        <link href="{{ asset('/css/materialize-edited.css') }}" rel="stylesheet" media="screen,projection">       
         <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/wwc.css') }}" rel="stylesheet">
         
     </head>
-    <body>
+    <body id="app">
         <!--<pre>
             Session: {{\Session::token() }}<br>
             CSRF Token: {{ csrf_token() }}   
@@ -62,9 +62,12 @@
         <footer>
             @include('partials.footer')
         </footer>
-        <!-- Scripts -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="{{ asset('/js/materialize.min.js') }}"></script>
-        <script src="{{ asset('/js/customjs.js') }}"></script>
+        <footer id="scripts">
+            <!-- Scripts -->
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <!--<script src="{{ asset('/js/jquery.mobile.custom.min.js') }}"></script>-->
+            <script src="{{ asset('/js/materialize.min.js') }}"></script>
+            <script src="{{ asset('/js/customjs.js') }}"></script>
+        </footer>
     </body>
 </html>

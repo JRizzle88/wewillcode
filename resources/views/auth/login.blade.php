@@ -23,7 +23,7 @@
 					<input type="checkbox" name="remember" id="remember" />
 					<label for="remember">Remember Me</label>
 				</p>
-				<button type="submit" class="btn waves-effect waves-light blue darken-2">Login</button>
+				<button type="submit" class="btn waves-effect waves-light wwc-green-bg">Login</button>
 				<p>
 					<a class="left" href="{{ url('/password/email') }}">Forgot Your Password?</a>
 					<a class="right" href="{{ url('/auth/register') }}">Don't have an Account?</a>

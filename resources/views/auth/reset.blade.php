@@ -26,7 +26,7 @@
 		</div>
 		<div class="row">
 			<div class="col s12">
-				<button type="submit" class="btn waves-effect waves-light blue darken-2">Reset Password</button>
+				<button type="submit" class="btn waves-effect waves-light wwc-green-bg">Reset Password</button>
 			</div>
 		</div>
 		</form>
