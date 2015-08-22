@@ -32,16 +32,16 @@ Route::group(['middleware' => 'superadmin'], function()
 	Route::bind('pages', function($value, $route) {
 		return App\Page::whereSlug($value)->first();
 	});
-	Route::resource('superadmin/pages', 'SuperAdmin\PagesController');
-	Route::get('superadmin/pages', 'SuperAdmin\PagesController@index');
+	Route::resource('superadmin/pages', 'Superadmin\PagesController');
+	Route::get('superadmin/pages', 'Superadmin\PagesController@index');
 	
 	// Posts
 	Route::model('posts', 'Post');
 	Route::bind('posts', function($value, $route) {
 		return App\Post::whereSlug($value)->first();
 	});
-	Route::resource('superadmin/posts', 'SuperAdmin\PostsController');
-	Route::get('superadmin/posts', 'SuperAdmin\PostsController@index');
+	Route::resource('superadmin/posts', 'Superadmin\PostsController');
+	Route::get('superadmin/posts', 'Superadmin\PostsController@index');
 	
 	// Filemanager
 	//Route::resource('superadmin/filemanager', 'Superadmin\FileManagerController');
