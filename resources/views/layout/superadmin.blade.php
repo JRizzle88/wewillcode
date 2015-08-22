@@ -12,8 +12,13 @@
         <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('/css/dashboard.css') }}" rel="stylesheet">
+        
+        <!-- markItUp! -->
+        <link href="{{ asset('markitup/skins/markitup/style.css') }}" rel="stylesheet" type="text/css"  />
+        <link href="{{ asset('markitup/sets/html/style.css') }}" rel="stylesheet" type="text/css"  />
+        
+        <link href="{{ asset('/css/app.css') }}" type="text/css" rel="stylesheet">
+        <link href="{{ asset('/css/dashboard.css') }}" type="text/css" rel="stylesheet">
         
     </head>
     <body>
@@ -52,7 +57,17 @@
         </footer>-->
         <!-- Scripts -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="{{ asset('markitup/jquery.markitup.js') }}"></script>
+        <script src="{{ asset('markitup/sets/html/set.js') }}"></script>
         <script src="{{ asset('/js/materialize.min.js') }}"></script>
         <script src="{{ asset('/js/customjs.js') }}"></script>
+        
+        <script language="javascript">
+            $(document).ready(function(){
+                $('#page-html-editor').markItUp(myHtmlSettings);
+                $('#post-html-editor').markItUp(myHtmlSettings);
+            });
+        </script>
+        
     </body>
 </html>

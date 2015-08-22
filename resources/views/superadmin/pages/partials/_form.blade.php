@@ -10,7 +10,7 @@
   </div>
   <div class="col s12">
     {!! Form::label('content', 'Content:') !!}
-    {!! Form::textarea('content', null, array('class' => 'materialize-textarea', 'size' => 'x25', 'placeholder' => 'Page Content. HTML Tags are valid. Structure how you would like.')) !!}
+    {!! Form::textarea('content', null, array('id' => 'page-html-editor', 'class' => '', 'size' => 'x25', 'placeholder' => 'Page Content. HTML Tags are valid. Structure how you would like.')) !!}
   </div>
 </div>
 
