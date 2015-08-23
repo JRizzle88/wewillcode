@@ -468,6 +468,7 @@ div#wwc-nav-holder {
 .wwc-primary-nav .wwc-nav-gallery .wwc-nav-item h3, .wwc-primary-nav .wwc-nav-icons .wwc-nav-item h3 {
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0;
 }
 .wwc-primary-nav .wwc-nav-gallery .wwc-nav-item {
   padding-left: 90px;
@@ -486,7 +487,8 @@ div#wwc-nav-holder {
 }
 .wwc-primary-nav .wwc-nav-icons .wwc-nav-item p {
   color: #2e3233;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  margin: 0;
   /* hide description on small devices */
   display: none;
 }
