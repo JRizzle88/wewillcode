@@ -74,6 +74,9 @@ header, main, footer {
   margin-right: 0px;
 }
 
+/* Indexes */
+span.layout { font-size: 10px; color: #ccc; margin-left: 20px;}
+
 /* ace editor */
 #ww-ace-editor, pre.ace_editor { min-height: 600px; }
 

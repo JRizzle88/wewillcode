@@ -27,7 +27,7 @@
 								
 								<!--<span class="slug">Slug: {{ $p->slug }}</span>
 								<span class="created-at">Created: {{ $p->created_at }}</span>-->
-								
+								<span class="layout">Layout: {{ $p->layout }}</span>
 								{!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('superadmin.posts.destroy', $p->slug))) !!}
 									<!--<div class="secondary-content post-actions" role="group" aria-label="...">-->
 										{!! Form::button('<i class="fa fa-times text-danger"></i>', array('type' => 'submit', 'class' => 'btn btn-xsmall red secondary-content')) !!}
