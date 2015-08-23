@@ -27,10 +27,19 @@ class PagesController extends Controller {
  	 */
  	public function show(Page $page, Post $post)
  	{
- 		//$sidebarPosts = Post::take(10)->latest()->get();
-
+		$pages = Page::where('draft', '0')->orderBy('name')->get();
+		// if drafted or doesn't exists
+		if( !$page->name || $page->draft == '1' ) {
+			$seo_title = "Page doesn't exists";
+			return view('errors.no_page')
+				->with('seo_title', $seo_title)
+				->with('pages', $pages);
+		} else {
+			// single page view
+	 		return view('pages.show', compact('page'));
+		}
  		// single Post view
- 		return view('pages.show', compact('page'));
+ 		//return view('pages.show', compact('page'));
 			//->with('sidebarPosts', $sidebarPosts);
  	}
 	 
