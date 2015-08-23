@@ -55,9 +55,10 @@
                             </div>
                         @endif
                 </div>
-                
-                @yield('content')
             </div>
+            
+            @yield('content')
+            
         </main>
         <footer>
             @include('partials.footer')

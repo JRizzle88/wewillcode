@@ -22,6 +22,7 @@ class Page extends Model {
 		'user_id',
 		'name',
 		'content',
+		'layout',
 		//'featured_image',
 		'slug',
 		'seo_title',
@@ -38,6 +39,26 @@ class Page extends Model {
 	public function user()
 	{
 		return $this->belongsTo('App\User');
+	}
+	
+	public function isDefaultLayout()
+	{
+		return $this->layout === 'default';
+	}
+	
+	public function isFullWidthLayout()
+	{
+		return $this->layout === 'full-width';
+	}
+	
+	public function isLeftSidebarLayout()
+	{
+		return $this->layout === 'left-sidebar';
+	}
+	
+	public function isRightSidebarLayout()
+	{
+		return $this->layout === 'right-sidebar';
 	}
 
 }

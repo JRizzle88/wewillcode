@@ -67,6 +67,7 @@ class PostsController extends Controller {
 
 		$request['user_id'] = $request->user()->id;
 		$input = Input::all();
+		
 		Post::create( $input );
 
 		return Redirect::route('superadmin.posts.index')->with('message', 'Post created');
@@ -111,7 +112,7 @@ class PostsController extends Controller {
 		$input = array_except(Input::all(), '_method');
 		$post->update($input);
 
-		return Redirect::route('superadmin.posts.show', $post->slug)->with('message', 'Post updated.');
+		return Redirect::route('superadmin.posts.index', $post->slug)->with('message', 'Post updated.');
 
 		// show after update post
 		//return view('posts.show', compact('post'));

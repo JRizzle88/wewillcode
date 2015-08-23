@@ -22,6 +22,7 @@ class Post extends Model {
 		'user_id',
 		'name',
 		'content',
+		'layout',
 		'featured_image',
 		'slug',
 		'seo_title',
@@ -50,4 +51,23 @@ class Post extends Model {
 		return $this->hasMany('App\Comment');
 	}
 
+	public function isDefaultLayout()
+	{
+		return $this->layout === 'default';
+	}
+	
+	public function isFullWidthLayout()
+	{
+		return $this->layout === 'full-width';
+	}
+	
+	public function isLeftSidebarLayout()
+	{
+		return $this->layout === 'left-sidebar';
+	}
+	
+	public function isRightSidebarLayout()
+	{
+		return $this->layout === 'right-sidebar';
+	}
 }

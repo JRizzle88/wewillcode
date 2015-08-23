@@ -82,3 +82,15 @@ header, main, footer {
   padding-left: 0;
 }
 }
+
+label > input{ /* HIDE RADIO */
+  display:none;
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+  max-width: 120px;
+}
+label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+  border:2px solid #2BBBAD;
+}

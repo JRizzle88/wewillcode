@@ -21,6 +21,46 @@
 </div>
 
 
+<div class="row layout-options">
+  <div class="col s12 m6 l6">
+    <h5>Layout and Options</h5>
+    <label>
+      {!! Form::radio('layout', 'default') !!}
+      <!--<input type="radio" name="layout" value="default" />-->
+      <img src="{{ asset('/img/layout-default.svg')}}" />
+    </label>
+    
+    <label>
+      {!! Form::radio('layout', 'full-width') !!}
+      <!--<input type="radio" name="layout" value="full-width"/>-->
+      <img src="{{ asset('/img/layout-full-width.svg')}}" />
+    </label>
+    
+    <label>
+      {!! Form::radio('layout', 'left-sidebar') !!}
+      <!--<input type="radio" name="layout" value="left-sidebar" />-->
+      <img src="{{ asset('/img/layout-left-sidebar.svg')}}" />
+    </label>
+    
+    <label>
+      {!! Form::radio('layout', 'right-sidebar') !!}
+      <!--<input type="radio" name="layout" value="right-sidebar" />-->
+      <img src="{{ asset('/img/layout-right-sidebar.svg')}}" />
+    </label>
+    
+    
+    <!--{!! Form::select('layout', array('default' => 'Default', 'full-width' => 'Full Width', 'right-sidebar' => 'Right Sidebar', 'left-sidebar' => 'Left Sidebar'), null, array('class' => 'form-control input-sm')) !!}-->
+  </div>
+  <div class="col s12 m6 l6">
+    <div id="left-sidebar" class="layout-selection">
+       <h5>Left Sidebar</h5>
+    </div>
+    <div id="right-sidebar" class="layout-selection">
+       <h5>Right Sidebar</h5>
+    </div>
+  </div>
+</div>
+
 <h5>Search Engine Optimization</h5>
 <div class="row">
   <div class="col s12 m6">
