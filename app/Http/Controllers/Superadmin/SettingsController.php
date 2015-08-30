@@ -24,7 +24,6 @@ class SettingsController extends Controller {
 	 */	
 	public function settingsGlobal()
 	{
-
 		return view('superadmin.settings.global');
 	}
 	

@@ -15,6 +15,10 @@ Route::get('/home', 'WelcomeController@index');
 
 // Account
 Route::get('/account', 'AccountController@index');
+Route::get('/account/profile', 'AccountController@profile');
+Route::get('/account/ideas', 'AccountController@ideas');
+Route::get('/account/supporters', 'AccountController@supporters');
+Route::get('/account/settings', 'AccountController@settings');
 
 Route::resource('pages', 'PagesController', ['only' => ['index', 'show']]);
 Route::model('pages', 'Page');
@@ -55,6 +59,15 @@ Route::group(['middleware' => 'superadmin'], function()
 	});
 	Route::resource('superadmin/posts', 'Superadmin\PostsController');
 	Route::get('superadmin/posts', 'Superadmin\PostsController@index');
+	
+	// Sidebars
+	Route::model('sidebars', 'Sidebar');
+	Route::bind('sidebars', function($value, $route) {
+		return App\Sidebar::whereId($value)->first();
+	});
+	Route::resource('superadmin/sidebars', 'Superadmin\SidebarsController');
+	Route::get('superadmin/sidebars', 'Superadmin\SidebarsController@index');
+	
 	
 	// Filemanager
 	Route::resource('superadmin/filemanager', 'Superadmin\FileManagerController', ['only' => ['destroy']]);

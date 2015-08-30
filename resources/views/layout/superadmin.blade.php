@@ -18,7 +18,7 @@
         <link href="{{ asset('markitup/sets/html/style.css') }}" rel="stylesheet" type="text/css"  /> -->
         
         <link href="{{ asset('/css/app.css') }}" type="text/css" rel="stylesheet">
-        <link href="{{ asset('/css/dashboard.css') }}" type="text/css" rel="stylesheet">
+        <link href="{{ asset('/css/backend.css') }}" type="text/css" rel="stylesheet">
         
     </head>
     <body id="superadmin">
@@ -63,7 +63,7 @@
         <script src="{{ asset('/ace-editor/src-noconflict/ace.js') }}" type="text/javascript" charset="utf-8"></script>
         <script src="{{ asset('/js/materialize.min.js') }}"></script>
         <script src="{{ asset('/js/customjs.js') }}"></script>
-        
+        <script src="{{ asset('/js/backend.js') }}"></script>
            
         <script language="javascript">
             $(document).ready(function(){

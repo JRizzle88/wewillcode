@@ -51,6 +51,16 @@ class Post extends Model {
 		return $this->hasMany('App\Comment');
 	}
 
+	/**
+	 * Has one relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function sidebar()
+	{
+		return $this->hasOne('App\Sidebar');
+	}
+	
 	public function isDefaultLayout()
 	{
 		return $this->layout === 'default';
@@ -69,5 +79,14 @@ class Post extends Model {
 	public function isRightSidebarLayout()
 	{
 		return $this->layout === 'right-sidebar';
+	}
+	
+	public function isSidebarEligible()
+	{
+		if($this->isLeftSidebarLayout() || $this->isRightSidebarLayout() ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

@@ -1,23 +1,12 @@
-@extends('layout.default')
+@extends('layout.account')
 
 @section('content')
-  <div class="row account">
-		  <div class="col s12">
-        	<div class="card grey lighten-5">
-              <div class="card-content">
-                  @if(\Session::token())
-                    <i class="session material-icons green white-text right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Valid Session!">thumb_up</i>
-                  @else
-                    <i class="session material-icons red white-text right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Invalid Session!">thumb_down</i>
-                  @endif
-                  <h5>Hello {{Auth::user()->name}}</h5>
-                  <p><b>Email:</b> {{Auth::user()->email}}</p>
-                  <p><b>Profession:</b></p>
-                  <p></p>
-                  
-              </div>
-          </div>
-      </div>	
-	</div>	   
 
+                <div class="wwc-panel">
+                  <div class="wwc-panel-title">General Information</div>
+                  <div class="wwc-panel-body">
+                    <p><i class="material-icons">person_pin</i> {{Auth::user()->email}}</p>
+                  </div>
+                </div>
+              
 @endsection

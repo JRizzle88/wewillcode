@@ -27,13 +27,21 @@
 								
 								<!--<span class="slug">Slug: {{ $p->slug }}</span>
 								<span class="created-at">Created: {{ $p->created_at }}</span>-->
-								<span class="layout">Layout: {{ $p->layout }}</span>
+								<span class="layout">@include('superadmin.posts.partials._index_layout_thumb')</span>
+							
+								
+								@if($p->isSidebarEligible())
+									@if($p->sidebar)
+										<span class="layout">Sidebar: {{ $p->sidebar->name }}</span>
+									@endif
+								@endif
+								
 								{!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('superadmin.posts.destroy', $p->slug))) !!}
 									<!--<div class="secondary-content post-actions" role="group" aria-label="...">-->
-										{!! Form::button('<i class="fa fa-times text-danger"></i>', array('type' => 'submit', 'class' => 'btn btn-xsmall red secondary-content')) !!}
+										{!! Form::button('<i class="fa fa-times text-danger"></i>', array('type' => 'submit', 'class' => 'delete btn btn-xsmall red secondary-content')) !!}
 								{!! Form::close() !!}		
-										{!! link_to_route('superadmin.posts.edit', '', $p->slug, array('class' => 'btn btn-xsmall fa fa-edit orange secondary-content')) !!}
-										{!! link_to_route('posts.show', '', $p->slug, array('class' => 'btn btn-xsmall fa fa-eye blue secondary-content')) !!}
+										{!! link_to_route('superadmin.posts.edit', '', $p->slug, array('class' => 'edit btn btn-xsmall fa fa-edit orange secondary-content')) !!}
+										{!! link_to_route('posts.show', '', $p->slug, array('class' => 'show btn btn-xsmall fa fa-eye blue secondary-content')) !!}
 									<!--</div>-->
 								</div>
 								

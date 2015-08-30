@@ -14,7 +14,7 @@ class RedirectIfAuthenticated
      */
     protected $auth;
 
-    protected $redirectTo = '/';
+    protected $redirectTo = '/account';
     /**
      * Create a new filter instance.
      *

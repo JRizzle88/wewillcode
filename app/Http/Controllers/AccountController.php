@@ -4,6 +4,9 @@ use App\User;
 use App\Page;
 use App\Post;
 
+use App\Idea;
+use App\IdeaSupporters;
+
 use Response;
 
 class AccountController extends Controller {
@@ -30,35 +33,32 @@ class AccountController extends Controller {
 		return view('account.index');
 	}
 	
-	public function dashboard()
+	public function profile()
 	{
-		$activeCount = User::where('active', '1')->count();
-		$subscriberCount = User::where('role', 'subscriber')->count();
-		$freelancerCount = User::where('role', 'freelancer')->count();
-		$inactiveCount = User::where('active', '0')->count();
-		
-		$latestUsers = User::take(4)->latest()->get();
-		$latestSubscribers = User::take(4)->where('role', 'subscriber')->latest()->get();
-		$latestPosts = Post::take(4)->latest()->get();
-		$latestPages = Page::take(4)->latest()->get();
-		
-		return view('account.dashboard')
-			->with('activeCount', $activeCount)
-			->with('subscriberCount', $subscriberCount)
-			->with('freelancerCount', $freelancerCount)
-			->with('inactiveCount', $inactiveCount)
-			->with('latestUsers', $latestUsers)
-			->with('latestSubscribers', $latestSubscribers)
-			->with('latestPosts', $latestPosts)
-			->with('latestPages', $latestPages);
+		return view('account.profile.profile');
 	}
 	
-	public function users()
+	public function ideas()
 	{
-		$superAdmins = User::take(30)->where('role', 'super_admin')->latest()->get();
+		$ideas = Idea::take(20)->get();
 		
-		return view('account.users.index')
-			->with('superAdmins', $superAdmins);
+		return view('account.ideas.ideas')
+			->with('ideas', $ideas);
 	}
 	
+	public function supporters()
+	{
+		$ideaCount = Idea::count();
+		$ideaSupporters = Idea::all();
+		
+		return view('account.supporters')
+			->with('ideaCount', $ideaCount)
+			->with('ideaSupporters', $ideaSupporters);
+	}
+	
+	public function settings()
+	{
+		return view('account.settings');
+	}
+
 }

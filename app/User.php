@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['first_name', 'last_name', 'email', 'password'];
+    protected $fillable = ['display_name', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -131,5 +131,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function fileentries()
 	{
 		return $this->hasMany('App\Fileentry');
+	}
+	
+	/**
+	 * Has many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function ideas()
+	{
+		return $this->hasMany('App\Idea');
 	}
 }

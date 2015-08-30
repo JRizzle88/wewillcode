@@ -42,6 +42,7 @@
       <li><a href="{{ url('superadmin/pages') }}">View All</a></li>
       <li><a href="{{ url('superadmin/pages/create') }}">Create New</a></li>
     </ul>
+  <li><a class="waves-effect waves-light" href="{{ url('superadmin/sidebars') }}">Sidebars</a></li>
 	<li><a class="waves-effect waves-light" href="{{ url('superadmin/filemanager') }}">Media</a></li>
 	<li><a class="dropdown-button waves-effect waves-light" href="#" data-beloworigin="true" data-activates="settings-dropdown">Settings<i class="fa fa-arrow-down right"></i></a></li>
     <ul id='settings-dropdown' class='dropdown-content blue'>

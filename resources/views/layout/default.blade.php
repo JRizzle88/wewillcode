@@ -17,15 +17,17 @@
             <meta name="description" content="{{ isset($post->seo_description) ? $post->seo_description : ''}}">
         @endif
         
-        <!-- Stylesheets -->
-        <link href="{{ asset('/css/materialize-edited.css') }}" rel="stylesheet" media="screen,projection">       
+        <!-- Stylesheets -->     
         <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{ asset('/css/reset.css') }}" rel='stylesheet' type='text/css'> 
         <link href="{{ asset('/css/wwc.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/wwc-grid.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/signin.css') }}" rel="stylesheet">
         
     </head>
-    <body id="app">
+    <body id="app" class="default-layout">
         <!--<pre>
             Session: {{\Session::token() }}<br>
             CSRF Token: {{ csrf_token() }}   
@@ -33,8 +35,10 @@
         <header>
             @include('partials.header')
         </header>
-        <main class="wwc-main-content">
-            <div class="container">
+        
+        <main>
+            <div class="row center">
+                <div class="col-span-6">
                 <div class="flash-messages">            
                         <!-- Informational Flash Messages -->
                         @if (Session::has('message'))
@@ -55,6 +59,7 @@
                             </div>
                         @endif
                 </div>
+                </div>
             </div>
             
             @yield('content')
@@ -66,9 +71,9 @@
         <footer id="scripts">
             <!-- Scripts -->
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <!--<script src="{{ asset('/js/jquery.mobile.custom.min.js') }}"></script>-->
-            <script src="{{ asset('/js/materialize.min.js') }}"></script>
-            <script src="{{ asset('/js/customjs.js') }}"></script>
+            <script src="{{ asset('/js/slider.js') }}"></script>
+            <script src="{{ asset('/js/frontend.js') }}"></script>
+            
         </footer>
     </body>
 </html>
