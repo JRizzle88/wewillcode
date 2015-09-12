@@ -1,6 +1,7 @@
 body, html { overflow-x: hidden; }
 
-body.default-layout {
+body.default-layout,
+body.account-layout {
   margin-top: 80px;
 }
 
