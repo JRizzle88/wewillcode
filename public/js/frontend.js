@@ -8,6 +8,14 @@ jQuery(document).ready(function($) {
 	$('.flash-messages').delay(4000).fadeOut(500);
 	
 	//$('.ajax-loader-blue').hide();
+	$('.wwc-tabbed-nav li').on('click', function() {
+		$('html, body').stop().animate({
+			//scrollTop: $('.wwc-tabbed-nav').offset().top
+			scrollTop: 500
+		}, 500);
+		//$('html, body').scrollTo(500);
+	});
+	
 	
 	var $blueLoader = '<p class="fieldset"><img class="ajax-loader-blue" src="' + baseUrl + '/img/evo-blue-box-ajax-loader.gif") }}" /></p>';
 	
