@@ -16,9 +16,9 @@ class AccountController extends Controller {
 
 	protected $idea_rules = [
 		'name' => ['required', 'min:3'],
-		'description_short' => ['required', 'min:50'],
-		'description_long_1' => ['required', 'min:200'],
-		'description_long_2' => ['required', 'min:200'],
+		'description_short',
+		'description_long_1',
+		'description_long_2',
 		//'user_id' => ['required'],
 	];
 	/**
