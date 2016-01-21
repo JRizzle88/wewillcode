@@ -196,12 +196,11 @@ textarea {
 	font-size: 13px;
 	margin-bottom: 20px;
 }
+
 /*progressbar*/
 #idea-steps-progressbar {
 	margin-bottom: 30px;
-
 	overflow: hidden;
-	/*CSS counters to number the steps*/
 	counter-reset: step;
     text-align: center;
 }
@@ -236,7 +235,7 @@ textarea {
 	margin: 0 auto 5px auto;
     transition: all 0.2s ease-in-out;
 }
-/*idea-steps-progressbar connectors*/
+
 #idea-steps-progressbar li:after {
 	content: '';
 	width: 100%;
@@ -245,21 +244,22 @@ textarea {
 	position: absolute;
 	left: -50%;
 	top: 25px;
-	z-index: -1; /*put it behind the numbers*/
+	z-index: -1;
     transition: all 0.2s ease-in-out;
 }
 #idea-steps-progressbar li:first-child:after {
-	/*connector not needed before the first step*/
 	content: none;
 }
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
+
 #idea-steps-progressbar li.active:before,  #idea-steps-progressbar li.active:after{
 	background: #27AE60;
 	color: white;
 }
 
-
+/* Ideas */
+.ideas {
+    margin-bottom: 20px;
+}
 .single-idea .idea-id {
     padding: 5px 10px;
     width: 20px;
