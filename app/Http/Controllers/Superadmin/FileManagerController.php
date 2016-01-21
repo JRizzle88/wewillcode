@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers\Superadmin;
 
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
 use App\Fileentry;
 use Request;
 use Redirect;
@@ -25,7 +25,7 @@ class FileManagerController extends Controller {
 		//$this->middleware('player', ['only' => ['add', 'index']]);
 		//$this->middleware('guest', ['only' => ['get']]);
 	}
-	
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -37,9 +37,9 @@ class FileManagerController extends Controller {
  		//var_dump($entries);
 		return view('superadmin.filemanager.index')->with('entries', $entries);
 	}
- 
+
 	public function add() {
- 		
+
 		$file = Request::file('filefield');
 		$extension = $file->getClientOriginalExtension();
 		Storage::disk('local')->put($file->getFilename().'.'.$extension,  File::get($file));
@@ -49,20 +49,20 @@ class FileManagerController extends Controller {
 		$entry->filename = $file->getFilename().'.'.$extension;
  		$entry->user_id = Auth::user()->id;
 		$entry->save();
- 
+
 		return redirect('superadmin/filemanager');
-		
+
 	}
-	
+
 	public function get($filename){
-	
+
 		$entry = Fileentry::where('filename', '=', $filename)->firstOrFail();
 		$file = Storage::disk('local')->get($entry->filename);
-		
+
 		return (new Response($file, 200))
 			->header('Content-Type', $entry->mime);
 	}
-	
+
 	/**
 	 * Remove the specified resource from storage.
 	 *

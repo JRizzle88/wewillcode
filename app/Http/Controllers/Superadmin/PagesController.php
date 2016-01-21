@@ -5,7 +5,7 @@ use Redirect;
 use App\User;
 use App\Page;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller {
@@ -15,7 +15,7 @@ class PagesController extends Controller {
 		'slug' => ['required'],
 		//'user_id' => ['required'],
 	];
-	
+
 	/**
 	 * Create a new controller instance.
 	 *
@@ -65,10 +65,10 @@ class PagesController extends Controller {
 	{
 		//
 		$this->validate($request, $this->rules);
-		
+
 		$request['user_id'] = $request->user()->id;
 		$input = Input::all();
-		
+
 		Page::create( $input );
 
 		return Redirect::route('superadmin.pages.index')->with('message', 'Page created');
@@ -83,7 +83,7 @@ class PagesController extends Controller {
 	public function show(Page $page)
 	{
 		$sidebarPosts = Post::take(10)->latest()->get();
-		
+
 		// single page view
 		return view('pages.show', compact('page'))->with('sidebarPosts', $sidebarPosts);
 	}
@@ -134,5 +134,5 @@ class PagesController extends Controller {
 		// show after destroy page
 		//return view('pages.show', compact('page'));
 	}
-	 
+
 }

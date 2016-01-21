@@ -5,7 +5,7 @@ use Redirect;
 use App\User;
 use App\Post;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller {
@@ -67,7 +67,7 @@ class PostsController extends Controller {
 
 		$request['user_id'] = $request->user()->id;
 		$input = Input::all();
-		
+
 		Post::create( $input );
 
 		return Redirect::route('superadmin.posts.index')->with('message', 'Post created');

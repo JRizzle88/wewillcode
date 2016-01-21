@@ -43,7 +43,7 @@
 }
 
 .col-2 {
-  flex-basis: 16.6666%; 
+  flex-basis: 16.6666%;
 }
 
 .col-3 {
@@ -60,7 +60,6 @@
 
 .col-6 {
   background: white;
-  height: 100px;
   flex-basis: 50%;
 }
 
@@ -126,7 +125,7 @@
   .nested .col {
     flex-basis: 100%;
   }
-  
+
 }
 
 /* eye candy */

@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['display_name', 'email', 'password'];
+    protected $fillable = ['email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -32,7 +32,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-    
+
     /**
 	 * The super admin role
 	 *
@@ -62,7 +62,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 	    return $this->role === 'freelancer';
 	}
-	
+
     /**
 	 * The subscriber role
 	 *
@@ -72,7 +72,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 	    return $this->role === 'subscriber';
 	}
-    
+
     /**
 	 * The user role
 	 *
@@ -82,7 +82,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 	    return $this->role === 'user';
 	}
-    
+
 	/**
 	 * Has one relation
 	 *
@@ -92,7 +92,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasOne('App\UserInformation');
 	}
-	
+
 	/**
 	 * Has many relation
 	 *
@@ -102,7 +102,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasMany('App\Page');
 	}
-	
+
 	/**
 	 * Has many relation
 	 *
@@ -112,7 +112,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasMany('App\Post');
 	}
-	
+
 	/**
 	 * Has many relation
 	 *
@@ -122,7 +122,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasMany('App\Comment');
 	}
-	
+
 	/**
 	 * Has many relation
 	 *
@@ -132,7 +132,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasMany('App\Fileentry');
 	}
-	
+
 	/**
 	 * Has many relation
 	 *

@@ -17,6 +17,8 @@ Route::get('/home', 'WelcomeController@index');
 Route::get('/account', 'AccountController@index');
 Route::get('/account/profile', 'AccountController@profile');
 Route::get('/account/ideas', 'AccountController@ideas');
+Route::get('/account/ideas/process', 'AccountController@ideas_process');
+Route::post('/account/ideas/process/save', 'AccountController@ideas_create');
 Route::get('/account/supporters', 'AccountController@supporters');
 Route::get('/account/settings', 'AccountController@settings');
 
@@ -40,10 +42,10 @@ Route::group(['middleware' => 'superadmin'], function()
 {
     Route::get('/superadmin', 'Superadmin\DashboardController@dashboard');
     Route::get('/superadmin/dashboard', 'Superadmin\DashboardController@dashboard');
-	
+
 	// Users
     Route::get('/superadmin/users', 'Superadmin\UsersController@index');
-	
+
     // Pages
 	Route::model('pages', 'Page');
 	Route::bind('pages', function($value, $route) {
@@ -51,7 +53,7 @@ Route::group(['middleware' => 'superadmin'], function()
 	});
 	Route::resource('superadmin/pages', 'Superadmin\PagesController');
 	Route::get('superadmin/pages', 'Superadmin\PagesController@index');
-	
+
 	// Posts
 	Route::model('posts', 'Post');
 	Route::bind('posts', function($value, $route) {
@@ -59,7 +61,7 @@ Route::group(['middleware' => 'superadmin'], function()
 	});
 	Route::resource('superadmin/posts', 'Superadmin\PostsController');
 	Route::get('superadmin/posts', 'Superadmin\PostsController@index');
-	
+
 	// Sidebars
 	Route::model('sidebars', 'Sidebar');
 	Route::bind('sidebars', function($value, $route) {
@@ -67,8 +69,8 @@ Route::group(['middleware' => 'superadmin'], function()
 	});
 	Route::resource('superadmin/sidebars', 'Superadmin\SidebarsController');
 	Route::get('superadmin/sidebars', 'Superadmin\SidebarsController@index');
-	
-	
+
+
 	// Filemanager
 	Route::resource('superadmin/filemanager', 'Superadmin\FileManagerController', ['only' => ['destroy']]);
 	Route::get('superadmin/filemanager/file/{filename}', ['as' => 'getentry', 'uses' => 'FileManagerController@get']);
@@ -76,7 +78,7 @@ Route::group(['middleware' => 'superadmin'], function()
 	Route::get('superadmin/filemanager/index', 'Superadmin\FileManagerController@index');
 	Route::post('superadmin/filemanager/add',['as' => 'addentry', 'uses' => 'Superadmin\FileManagerController@add']);
 	//Route::get('superadmin/filemanager/destroy', 'Superadmin\FileManagerController@destroy');
-	
+
 	// Settings
 	Route::get('superadmin/settings/global', 'Superadmin\SettingsController@settingsGlobal');
 	Route::get('superadmin/settings/maintenance', 'Superadmin\SettingsController@settingsMaintenance');

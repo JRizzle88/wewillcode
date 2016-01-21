@@ -2,14 +2,19 @@ body, html { overflow-x: hidden; }
 
 body.default-layout,
 body.account-layout {
-  margin-top: 80px;
+  padding-top: 80px;
 }
 
 /* Helpers */
 .wwc-btn-disabled {
   opacity: 0.5;
 }
-
+input,
+select,
+textarea {
+    font-family: 'Arial';
+    font-size: 0.8em;
+}
 /* Ajax Loaders */
 .ajax-loader-blue {
   display: block;
@@ -17,13 +22,18 @@ body.account-layout {
 }
 
 /* User Account */
+.account .account-page-title {
+    font-size: 2em;
+    color: #388DC1;
+}
 .wwc-account-side-menu {
   background: #DADBD9;
-  
+
 }
 .wwc-account-side-menu ul {
   padding-bottom: 15px;
   border-left: 2px solid #388DC1;
+  height: 100%;
 }
 .wwc-account-side-menu ul li a {
   padding: 13px 8px 13px 15px;
@@ -36,7 +46,8 @@ body.account-layout {
 }
 
 .wwc-account-main-content {
-  /*background: white;*/
+  background: white;
+  padding-bottom: 40px;
 }
 .wwc-account-main-content .wwc-panel {
   background: white;
@@ -55,28 +66,227 @@ body.account-layout {
   margin: 0px 0px 15px 0px;
 }
 
+.wwc-account-main-content .wwc-panel label {
+    padding: 5px 10px;
+    background: #E2E3DF;
+    margin-top: 5px;
+    display: inline-block;
+}
+.wwc-account-main-content textarea {
+    resize: vertical;
+    height: 250px;
+}
+.wwc-form-field {
+	width: 100%;
+	padding: 10px 15px 10px 15px;
+	display: block;
+	box-sizing: border-box;
+	border: 1px solid #E2E3DF;
+    border-bottom-color: #388DC1;
+    margin-bottom: 15px;
+}
 
-.btn { 
-  border: 0; 
-  color: white; 
-  padding: 8px 15px; 
-  font-size: 16px; 
+#idea-desc-2-toggle {
+    padding: 3px 10px;
+    color: #1976D2;
+    background: #E2E3DF;
+}
+#idea-desc-2-toggle:hover {
+    cursor: pointer;
+}
+
+.btn {
+  border: 0;
+  color: white;
+  padding: 8px 15px;
+  font-size: 16px;
   display: inline-block;
 }
-.btn:hover { 
-  cursor: pointer; 
+.btn:hover {
+  cursor: pointer;
 }
-.wwc-green-text { 
-  color: #69aa6f; 
+.wwc-green-text {
+  color: #69aa6f;
 }
-.wwc-green-bg { 
-  background-color: #69aa6f;
+.wwc-green-bg {
+  background-color: #27AE60;
   transition: all 0.2s ease-in-out;
 }
 .wwc-green-bg:hover {
   background-color: #7ECC84;
 }
+.wwc-blue-bg {
+  background-color: #1976D2;
+  transition: all 0.2s ease-in-out;
+}
+.wwc-blue-bg:hover {
+  background-color: #1C86EA;
+}
+.wwc-gray-bg {
+    background-color: #DADBD9;
+    transition: all 0.2s ease-in-out;
+}
+.wwc-gray-bg:hover {
+    background-color: #CECECE;
+}
+/* idea multistep form styles */
+#create-idea-form {
+	width: 100%;
+	margin: 0px auto 20px auto;
+	position: relative;
+}
+#create-idea-form fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	/* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4); */
+	padding: 20px 30px;
 
+	box-sizing: border-box;
+	width: 100%;
+
+	/*stacking fieldsets above each other*/
+	position: absolute;
+}
+/*Hide all except first fieldset*/
+#create-idea-form fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#create-idea-form input,
+#create-idea-form input[type=submit],
+#create-idea-form textarea {
+	padding: 15px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+/*buttons*/
+#create-idea-form input[type=submit] {
+    border: 0px;
+}
+#create-idea-form input[type=submit]:hover {
+    cursor: pointer;
+}
+#create-idea-form .next,
+#create-idea-form .submit {
+    float: right;
+}
+#create-idea-form .previous {
+    float: left;
+}
+#create-idea-form .btn,
+#create-idea-form input[type=submit] {
+	width: 100px;
+	color: white;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#idea-steps-progressbar {
+	margin-bottom: 30px;
+
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+    text-align: center;
+}
+#idea-steps-progressbar li {
+	list-style-type: none;
+	font-size: 1.2em;
+	width: 25%;
+	float: left;
+    text-align: center;
+	position: relative;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid #27AE60;
+}
+#idea-steps-progressbar li.active {
+    background: #27AE60;
+    color: white;
+}
+#idea-steps-progressbar li p {
+    font-size: 0.85em;
+}
+#idea-steps-progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 40px;
+	line-height: 40px;
+	display: block;
+	font-size: 2em;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+    transition: all 0.2s ease-in-out;
+}
+/*idea-steps-progressbar connectors*/
+#idea-steps-progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 25px;
+	z-index: -1; /*put it behind the numbers*/
+    transition: all 0.2s ease-in-out;
+}
+#idea-steps-progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#idea-steps-progressbar li.active:before,  #idea-steps-progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+
+
+.single-idea .idea-id {
+    padding: 5px 10px;
+    width: 20px;
+    height: 20px;
+    background: #E2E3DF;
+    border-radius: 50%;
+}
+.single-idea .idea-name {
+    color: #388DC1;
+    font-size: 1.3em;
+}
+.single-idea .idea-name:hover {
+    cursor: pointer;
+}
+.single-idea .idea-actions {
+    float: right;
+}
+.single-idea .idea-actions a {
+    color: #388DC1;
+}
+.single-idea .single-idea-listing {
+    background: #DADBD9;
+    padding: 10px;
+}
+.single-idea .single-idea-listing-data {
+    margin-top: 15px;
+}
 /*
 .wwc-auth-form { margin: 100px auto 0 auto; width: 300px; }
 .wwc-auth-form p { margin: 1em 0px !important; }
@@ -92,7 +302,7 @@ main { margin-top: 80px; padding-top: 20px; }
 }
 
 body#app { background: #e2e3df; }
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -119,7 +329,7 @@ a {
   text-decoration: none;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -154,7 +364,7 @@ Modules - reusable parts of our design
     max-width: 600px;
     margin: -80px auto;
   }
-  
+
   .wwc-teaser-form .wwc-form input[type=submit] {
     background: #2f889a;
     transition: all 0.5s ease;
@@ -162,9 +372,9 @@ Modules - reusable parts of our design
     padding: 15px;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 html, body {
@@ -202,17 +412,17 @@ html, body {
     height: 80px;
     box-shadow: none;
   }
-  
+
   .home-layout .wwc-header {
     background: transparent;
   }
-  
+
   .wwc-teaser-form {
     width: 80%;
     max-width: 600px;
     margin: -100px auto;
   }
-  
+
 }
 @media only screen and (min-width: 1170px) {
   .wwc-header {
@@ -570,7 +780,7 @@ html, body {
     font-size: 30px;
     font-size: 2.5rem;
   }
-  
+
   .wwc-teaser-form h3 {
     color: #fff;
     text-transform: uppercase;
@@ -596,7 +806,7 @@ html, body {
     /* margin: 0; */
     margin: 0px auto;
 }
-  
+
 }
 
 .wwc-main-content {
@@ -615,7 +825,7 @@ html, body {
 }
 
 
-/* -------------------------------- 
+/* --------------------------------
 
 Form
 
@@ -919,7 +1129,7 @@ Form
     transform: scale(0.8);
   }
 }
-/* -------------------------------- 
+/* --------------------------------
 
 Custom icons
 
@@ -956,9 +1166,9 @@ Custom icons
   background: url("../img/wwc-icon-message.svg") no-repeat 16px 16px, url("../img/wwc-required.svg") no-repeat top right;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-FLoating labels 
+FLoating labels
 
 -------------------------------- */
 .js .floating-labels div {
@@ -1060,15 +1270,15 @@ FLoating labels
 	.wwc-teaser-form h3 {
 		font-size: 18px;
 	}
-	
+
 	.wwc-form input[type="text"], .wwc-form input[type="email"], .wwc-form textarea, .wwc-form select {
 		padding: 6px;
 	}
-	
+
 	.js .floating-labels .wwc-label {
 		font-size: 18px;
 	}
-	
+
 	.wwc-teaser-form .wwc-form input[type=submit] {
 		font-size: 18px;
 		padding: 12px;
@@ -1136,11 +1346,11 @@ nav.intro-nav {
 }
 
 .intro-nav ul li a{
-    
+
 }
 
 .intro-nav ul li a:hover{
-    
+
 }
 
 a.wwc-learn-more {
@@ -1255,36 +1465,3 @@ p.wwc-step-text {
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

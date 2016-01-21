@@ -9,7 +9,7 @@ use App\Page;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
 
 class SidebarsController extends Controller
 {
@@ -23,7 +23,7 @@ class SidebarsController extends Controller
 		parent::__construct();
 		//$this->middleware('guest');
 	}
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -32,15 +32,15 @@ class SidebarsController extends Controller
     public function index()
     {
         $sidebars = Sidebar::take(500)->orderBy('created_at', 'asc')->get();
-        
+
         //foreach($sidebars as $s) {
         //    $pages = null;
         //    $posts = null;
         //    if($s->page_id != NULL || $s->post_id != NULL) {
 
-        //      $pages = Page::take(500)->orderBy('name', 'asc')->where('id', $s->page_id)->get(); 
+        //      $pages = Page::take(500)->orderBy('name', 'asc')->where('id', $s->page_id)->get();
 
-        //      $posts = Post::take(500)->orderBy('name', 'asc')->where('id', $s->post_id)->get();  
+        //      $posts = Post::take(500)->orderBy('name', 'asc')->where('id', $s->post_id)->get();
         //    }
         //}
         //dd($posts);
@@ -70,7 +70,7 @@ class SidebarsController extends Controller
     public function store(Request $request)
     {
         $input = Input::all();
-		
+
 		Sidebar::create( $input );
 
 		return Redirect::route('superadmin.sidebars.index')->with('message', 'Sidebar created');
@@ -97,7 +97,7 @@ class SidebarsController extends Controller
     {
         //
         $sidebars = Sidebar::take(500)->orderBy('created_at', 'asc')->get();
-        
+
         return view('superadmin.sidebars.edit', compact('sidebar'))
             ->with('sidebars', $sidebars);
     }
@@ -128,7 +128,7 @@ class SidebarsController extends Controller
     {
         //
         $id->delete();
-        
+
         return Redirect::route('superadmin.sidebars.index')->with('message', 'Sidebar deleted.');
     }
 }

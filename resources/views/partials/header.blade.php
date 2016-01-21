@@ -3,7 +3,11 @@
 	<nav class="main-nav">
 		<ul>
 			@if(Auth::check())
+				<li><a class="wwc-account" href="{{ url('/ideas') }}">Ideas</a></li>
 				<li><a class="wwc-account" href="{{ url('/account') }}">Account</a></li>
+				@if(Auth::user()->isSuperAdmin())
+					<li><a class="wwc-superadmin" href="{{ url('superadmin') }}">Super Admin</a></li>
+				@endif
 				<li><a class="wwc-logout" href="{{ url('auth/logout') }}"><i class="fa fa-sign-out"></i></a></li>
 			@else
 				<!-- inser more links here -->
@@ -33,7 +37,7 @@
 		<li><a href="#0">Other Service</a></li>
 
 		<li class="wwc-label">Stay Connected</li>
-			
+
 		<li class="wwc-social wwc-facebook"><a href="#0">Facebook</a></li>
 		<li class="wwc-social wwc-instagram"><a href="#0">Instagram</a></li>
 		<li class="wwc-social wwc-dribbble"><a href="#0">Dribbble</a></li>
