@@ -9,18 +9,61 @@ body.account-layout {
 .wwc-btn-disabled {
   opacity: 0.5;
 }
+nav {
+    background: none;
+    box-shadow: none;
+    height: auto;
+}
+nav i {
+    height: auto;
+}
 input,
 select,
 textarea {
     font-family: 'Arial';
     font-size: 0.8em;
 }
+.img-responsive {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+}
+
 /* Ajax Loaders */
 .ajax-loader-blue {
   display: block;
   margin: 0 auto;
 }
 
+/* Front End Ideas */
+.wwc-ideas .wwc-single-idea,
+.wwc-ideas .wwc-promote-idea {
+    background: white;
+}
+.wwc-ideas .wwc-single-idea .card-content {
+    padding: 20px;
+}
+.wwc-ideas .wwc-single-idea .chip {
+    margin-top: 10px;
+}
+.wwc-ideas .wwc-single-idea .card-action {
+    padding: 10px 15px;
+}
+.idea-filter {
+    padding: 20px 0px 1px 0px;
+    color: white;
+    background: #1F4F70;
+    margin-bottom: 20px;
+}
+
+.label {
+    padding: 3px;
+}
+.label.wwc-green-bg,
+.label.wwc-blue-bg {
+    color: white;
+}
 /* User Account */
 .account .account-page-title {
     font-size: 2em;
@@ -95,16 +138,6 @@ textarea {
     cursor: pointer;
 }
 
-.btn {
-  border: 0;
-  color: white;
-  padding: 8px 15px;
-  font-size: 16px;
-  display: inline-block;
-}
-.btn:hover {
-  cursor: pointer;
-}
 .wwc-green-text {
   color: #69aa6f;
 }
@@ -152,7 +185,7 @@ textarea {
 #create-idea-form fieldset:not(:first-of-type) {
 	display: none;
 }
-/*inputs*/
+/*inputs
 #create-idea-form input,
 #create-idea-form input[type=submit],
 #create-idea-form textarea {
@@ -163,7 +196,7 @@ textarea {
 	font-family: montserrat;
 	color: #2C3E50;
 	font-size: 13px;
-}
+}*/
 /*buttons*/
 #create-idea-form input[type=submit] {
     border: 0px;
@@ -174,17 +207,19 @@ textarea {
 #create-idea-form .next,
 #create-idea-form .submit {
     float: right;
+    box-shadow: none;
 }
 #create-idea-form .previous {
     float: left;
+    box-shadow: none;
 }
-#create-idea-form .btn,
+/*#create-idea-form .btn,
 #create-idea-form input[type=submit] {
 	width: 100px;
 	color: white;
     font-size: 1em;
     margin-top: 20px;
-}
+}*/
 
 /*headings*/
 .fs-title {
@@ -260,6 +295,10 @@ textarea {
 .ideas {
     margin-bottom: 20px;
 }
+.ideas .collection-item i {
+    font-size: 20px;
+    margin-right: 10px;
+}
 .single-idea .idea-id {
     padding: 5px 10px;
     width: 20px;
@@ -267,24 +306,15 @@ textarea {
     background: #E2E3DF;
     border-radius: 50%;
 }
-.single-idea .idea-name {
+.single-idea-listing .idea-name {
     color: #388DC1;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
-.single-idea .idea-name:hover {
+.single-idea-listing .idea-name:hover {
     cursor: pointer;
 }
-.single-idea .idea-actions {
-    float: right;
-}
-.single-idea .idea-actions a {
-    color: #388DC1;
-}
-.single-idea .single-idea-listing {
-    background: #DADBD9;
-    padding: 10px;
-}
-.single-idea .single-idea-listing-data {
+
+.single-idea-listing .single-idea-listing-data {
     margin-top: 15px;
 }
 /*

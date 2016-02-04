@@ -7,6 +7,11 @@ jQuery(document).ready(function($) {
 
 	$('.flash-messages').delay(4000).fadeOut(500);
 
+// Initiate materialize select option
+	//if($('select').length > 0) {
+	//	$('select').material_select();
+	//}
+
 	//$('.ajax-loader-blue').hide();
 	$('.wwc-tabbed-nav li').on('click', function() {
 		$('html, body').stop().animate({

@@ -18,12 +18,13 @@
         @endif
 
         <!-- Stylesheets -->
+        <link href="{{ asset('/css/materialize.css') }}" rel="stylesheet" media="screen,projection">
         <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="{{ asset('/css/reset.css') }}" rel='stylesheet' type='text/css'>
         <link href="{{ asset('/css/wwc.css') }}" rel="stylesheet">
-        <link href="{{ asset('/css/wwc-grid.css') }}" rel="stylesheet">
+        <!--<link href="{{ asset('/css/wwc-grid.css') }}" rel="stylesheet">-->
         <link href="{{ asset('/css/signin.css') }}" rel="stylesheet">
 
     </head>
@@ -38,8 +39,8 @@
 
         <main>
             <div class="row center">
-                <div class="col-span-6">
-                <div class="flash-messages">
+                <div class="col s12">
+                    <div class="flash-messages">
                         <!-- Informational Flash Messages -->
                         @if (Session::has('message'))
                             <div class="card flash blue lighten-1">
@@ -58,27 +59,27 @@
                                 </div>
                             </div>
                         @endif
-                </div>
-                </div>
-            </div>
-            <div class="row center account">
-		      <div class="col-7">
-                <div class="row">
-                    <div class="col col-12">
-                    <h2 class="account-page-title">Account</h2>
-                </div>
-              </div>
-            <div class="row">
-               <div class="col col-2 wwc-account-side-menu">
-                   @include('account.partials._side_menu')
-                </div>
-                <div class="col col-10">
-                    <div class="wwc-account-main-content">
-                        @yield('content')
                     </div>
                 </div>
             </div>
+            <div class="container account">
+                <div class="row">
+		            <div class="col s12">
+                        <h2 class="account-page-title">Account</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2 wwc-account-side-menu">
+                       @include('account.partials._side_menu')
+                    </div>
+                    <div class="col s10">
+                        <div class="wwc-account-main-content">
 
+                            @yield('content')
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             @include('partials.footer')
@@ -86,6 +87,7 @@
         <footer id="scripts">
             <!-- Scripts -->
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="{{ asset('/js/materialize.min.js') }}"></script>
             <script src="{{ asset('/js/slider.js') }}"></script>
             <script src="{{ asset('/js/frontend.js') }}"></script>
 

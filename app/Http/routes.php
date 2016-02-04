@@ -13,6 +13,9 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('/home', 'WelcomeController@index');
 
+// Ideas
+Route::resource('/ideas', 'IdeasController', ['only' => ['index', 'show']]);
+
 // Account
 Route::get('/account', 'AccountController@index');
 Route::get('/account/profile', 'AccountController@profile');
